@@ -1,6 +1,5 @@
 ﻿
 using AwesomeNetwork.Models;
-using System.ComponentModel.DataAnnotations;
 
 namespace AwesomeNetwork.ViewModels.Account;
 

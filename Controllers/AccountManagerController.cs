@@ -46,9 +46,7 @@ namespace AwesomeNetwork.Controllers
         public IActionResult MyPage()
         {
             var user = User;
-
             var result = _userManager.GetUserAsync(user);
-
             return View("User", new UserViewModel(result.Result!));
         }
 
@@ -58,21 +56,14 @@ namespace AwesomeNetwork.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid) return RedirectToAction("Index", "Home");
+            var user = _mapper.Map<User>(model);
+            var result = await _signInManager.PasswordSignInAsync(user.Email, model.Password, model.RememberMe, false);
+            if (result.Succeeded)
             {
-
-                var user = _mapper.Map<User>(model);
-
-                var result = await _signInManager.PasswordSignInAsync(user.Email, model.Password, model.RememberMe, false);
-                if (result.Succeeded)
-                {
-                    return RedirectToAction("MyPage", "AccountManager");
-                }
-                else
-                {
-                    ModelState.AddModelError("", "Неправильный логин и (или) пароль");
-                }
+                return RedirectToAction("MyPage", "AccountManager");
             }
+            ModelState.AddModelError("", "Неправильный логин и (или) пароль");
             return RedirectToAction("Index","Home");
         }
 
@@ -97,19 +88,12 @@ namespace AwesomeNetwork.Controllers
                 user.Convert(model);
 
                 var result = await _userManager.UpdateAsync(user!);
-                if (result.Succeeded)
-                {
-                    return RedirectToAction("MyPage", "AccountManager");
-                }
-                else
-                {
-                    return RedirectToAction("Edit", "AccountManager");
-                }
+                return RedirectToAction(result.Succeeded ? "MyPage" : "Edit", "AccountManager");
             }
             else
             {
                 ModelState.AddModelError("", "Некорректные данные");
-                return View("Edit", model);
+                return View( model);
             }
         }
     }
