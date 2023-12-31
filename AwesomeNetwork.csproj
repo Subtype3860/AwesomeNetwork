@@ -20,4 +20,9 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.13" />
   </ItemGroup>
 
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\Register\Register.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Register\RegisterPart2.cshtml" />
+  </ItemGroup>
+
 </Project>

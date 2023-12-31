@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using AwesomeNetwork.Models;
 using AwesomeNetwork.Data.Repository;
 using AwesomeNetwork.ViewModels.Account;
@@ -9,7 +6,6 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using AwesomeNetwork.Ext;
-using System.Diagnostics;
 using AwesomeNetwork.Data.UnitofWork;
 
 
@@ -35,7 +31,7 @@ namespace AwesomeNetwork.Controllers
         [HttpGet]
         public IActionResult Login()
         {
-            return View("Home/Login");
+            return RedirectToAction("Login");
         }
 
         [HttpGet]
@@ -53,7 +49,7 @@ namespace AwesomeNetwork.Controllers
 
             var result = _userManager.GetUserAsync(user);
 
-            return View("User", new UserViewModel(result.Result));
+            return View("User", new UserViewModel(result.Result!));
         }
 
 
@@ -77,7 +73,7 @@ namespace AwesomeNetwork.Controllers
                     ModelState.AddModelError("", "Неправильный логин и (или) пароль");
                 }
             }
-            return View("Views/Home/Index.cshtml");
+            return RedirectToAction("Index","Home");
         }
 
         [Route("Logout")]
@@ -96,11 +92,11 @@ namespace AwesomeNetwork.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = await _userManager.FindByIdAsync(model.UserId);
+                var user = await _userManager.FindByIdAsync(model.UserId!);
 
                 user.Convert(model);
 
-                var result = await _userManager.UpdateAsync(user);
+                var result = await _userManager.UpdateAsync(user!);
                 if (result.Succeeded)
                 {
                     return RedirectToAction("MyPage", "AccountManager");

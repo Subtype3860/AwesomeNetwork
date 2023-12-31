@@ -25,14 +25,14 @@ namespace AwesomeNetwork.Controllers
         [HttpGet]
         public IActionResult Register()
         {
-            return View("Home/Register");
+            return View();
         }
 
         [Route("RegisterPart2")]
         [HttpGet]
         public IActionResult RegisterPart2(RegisterViewModel model)
         {
-            return View("RegisterPart2", model);
+            return View(model);
         }
         [Route("Register")]
         [HttpPost]

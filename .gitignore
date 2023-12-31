@@ -2,6 +2,6 @@
 .idea/
 obj/Debug/
 obj/project.packagespec.json
-﻿/Data/Migrations/
+/Data/Migrations/
 .idea/.idea.AwesomeNetwork.dir/
 obj/Debug/net7.0/project.razor.vscode.bin
