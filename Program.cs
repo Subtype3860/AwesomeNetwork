@@ -2,13 +2,13 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using AwesomeNetwork.Models;
 using AwesomeNetwork;
+using AwesomeNetwork.Data.UnitofWork;
 
 var builder = WebApplication.CreateBuilder(args);
 var connection = builder.Configuration.GetConnectionString("DefaultConnection");
 
 builder.Services
     .AddDbContext<ApplicationDbContext>(options => options.UseSqlite(connection))
-    .AddUnitOfWork()
     .AddIdentity<User, IdentityRole>(opts =>
     {
         opts.Password.RequiredLength = 5;
@@ -21,6 +21,7 @@ builder.Services
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 var app = builder.Build();
 
@@ -42,4 +43,4 @@ app.UseAuthorization();
 
 app.MapRazorPages();
 
-app.Run()
+app.Run();

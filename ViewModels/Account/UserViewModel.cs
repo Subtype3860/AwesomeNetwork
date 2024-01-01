@@ -2,8 +2,12 @@
 
 namespace AwesomeNetwork.ViewModels.Account
 {
-    public class UserViewModel(User user)
+    public class UserViewModel
     {
-        public User User { get; set; } = user;
+        public User User { get; set; }
+        public UserViewModel(User user)
+        {
+            this.User = user;
+        }
     }
 }
