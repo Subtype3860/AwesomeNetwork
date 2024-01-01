@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "9ufPw0m+DX+/QZNU6fQkQYT7GH/d5c+34A3PYb2GARHmDC60prZHqAt/5Hw2zTCArx7GaCvss/t+88f4Tbg+cg==",
+  "dgSpecHash": "Y1UYV8JnwQZkqX2TYzLfLdtr8rnQEE/6snzn9JAkKmD44wBmVKSSUaPwsumhAzLUH+on7aCFcdE4fj7sAZBb1w==",
   "success": true,
   "projectFilePath": "C:\\Users\\boora\\OneDrive\\Рабочий стол\\Project\\AwesomeNetwork\\AwesomeNetwork.csproj",
   "expectedPackageFiles": [
@@ -51,7 +51,11 @@
     "C:\\Users\\boora\\.nuget\\packages\\system.text.encoding.codepages\\4.5.1\\system.text.encoding.codepages.4.5.1.nupkg.sha512",
     "C:\\Users\\boora\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
     "C:\\Users\\boora\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512",
-    "C:\\Users\\boora\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512"
+    "C:\\Users\\boora\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
+    "C:\\Users\\boora\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.14\\microsoft.windowsdesktop.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\boora\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.14\\microsoft.netcore.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\boora\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.14\\microsoft.aspnetcore.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\boora\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.14\\microsoft.netcore.app.host.win-x64.7.0.14.nupkg.sha512"
   ],
   "logs": []
 }
