@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using AwesomeNetwork.Data.UnitofWork;
+using AwesomeNetwork.Ext;
 using AwesomeNetwork.Models;
 using AwesomeNetwork.ViewModels.Account;
 using Microsoft.AspNetCore.Authorization;
@@ -10,10 +11,10 @@ namespace DefaultNamespace;
 
 public class AccountManagerController : Controller
 {
-        private IMapper _mapper;
+        private readonly IMapper _mapper;
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
-        private IUnitOfWork _unitOfWork;
+        private readonly IUnitOfWork _unitOfWork;
         public AccountManagerController(IMapper mapper, UserManager<User> userManager, SignInManager<User> signInManager, IUnitOfWork unitOfWork)
         {
             _mapper = mapper;
@@ -21,20 +22,17 @@ public class AccountManagerController : Controller
             _signInManager = signInManager;
             _unitOfWork = unitOfWork;
         }
-
         [Route("Login")]
         [HttpGet]
         public IActionResult Login()
         {
             return View("Home/Login");
         }
-
         [HttpGet]
         public IActionResult Login(string returnUrl = null) 
         {
             return View(new LoginViewModel { ReturnUrl = returnUrl });
-        }
-        
+        }        
         [Route("MyPage")]
         [Authorize]
         [HttpGet]
@@ -46,8 +44,6 @@ public class AccountManagerController : Controller
 
             return View("User", new UserViewModel(result.Result));
         }
-
-
         [Route("Login")]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -70,7 +66,6 @@ public class AccountManagerController : Controller
             }
             return View("Views/Home/Index.cshtml");
         }
-
         [Route("Logout")]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -79,7 +74,6 @@ public class AccountManagerController : Controller
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
         }
-
         [Authorize]
         [Route("Update")]
         [HttpPost]
@@ -89,7 +83,7 @@ public class AccountManagerController : Controller
             {
                 var user = await _userManager.FindByIdAsync(model.UserId!);
 
-                user.Convert(model);
+                user!.Convert(model);
 
                 var result = await _userManager.UpdateAsync(user);
                 if (result.Succeeded)
