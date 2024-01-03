@@ -21,7 +21,7 @@ public class RegisterController : Controller
     [HttpGet]
     public IActionResult Register()
     {
-        return View("Home/Register");
+        return View("Register");
     }
     [Route("RegisterPart2")]
     [HttpGet]

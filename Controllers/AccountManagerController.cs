@@ -26,7 +26,7 @@ public class AccountManagerController : Controller
         [HttpGet]
         public IActionResult Login()
         {
-            return View("Home/Login");
+            return View("Login");
         }
         [HttpGet]
         public IActionResult Login(string returnUrl = null) 
@@ -42,7 +42,7 @@ public class AccountManagerController : Controller
 
             var result = _userManager.GetUserAsync(user);
 
-            return View("User", new UserViewModel(result.Result));
+            return View("User", new UserViewModel(result.Result!));
         }
         [Route("Login")]
         [HttpPost]
@@ -54,7 +54,7 @@ public class AccountManagerController : Controller
 
                 var user = _mapper.Map<User>(model);
 
-                var result = await _signInManager.PasswordSignInAsync(user.Email, model.Password, model.RememberMe, false);
+                var result = await _signInManager.PasswordSignInAsync(user.Email!, model.Password!, model.RememberMe, false);
                 if (result.Succeeded)
                 {
                     return RedirectToAction("MyPage", "AccountManager");
@@ -64,7 +64,7 @@ public class AccountManagerController : Controller
                     ModelState.AddModelError("", "Неправильный логин и (или) пароль");
                 }
             }
-            return View("Views/Home/Index.cshtml");
+            return RedirectToAction("Index", "Home");
         }
         [Route("Logout")]
         [HttpPost]
@@ -85,15 +85,8 @@ public class AccountManagerController : Controller
 
                 user!.Convert(model);
 
-                var result = await _userManager.UpdateAsync(user);
-                if (result.Succeeded)
-                {
-                    return RedirectToAction("MyPage", "AccountManager");
-                }
-                else
-                {
-                    return RedirectToAction("Edit", "AccountManager");
-                }
+                var result = await _userManager.UpdateAsync(user!);
+                return RedirectToAction(result.Succeeded ? "MyPage" : "Update", "AccountManager");
             }
             else
             {

@@ -2,24 +2,26 @@
 @{
     ViewData["Title"] = "Login";
 }
-<div class="block-reg background-white">
-    <h4 class="center">Добро пожаловать!</h4>
+<div>
+    <h4>Добро пожаловать!</h4>
     <form class="frm" method="post" asp-controller="AccountManager" asp-action="Login">
         <div asp-validation-summary="ModelOnly"></div>
         <div>
             <div class="mrgn">
+                <label asp-for="Email" class="form-label"></label>
                 <input asp-for="Email" class="form-control" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
         </div>
         <div>
             <div class="mrgn">
+                <label asp-for="Password" class="form-label"></label>
                 <input asp-for="Password" class="form-control" />
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
         </div>
         <div>
-            <input class="enter_submit" type="submit" value="Войти" />
+            <input class="btn btn-primary" type="submit" value="Войти" />
         </div>
     </form>
 </div>

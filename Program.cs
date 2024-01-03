@@ -3,10 +3,18 @@ using Microsoft.EntityFrameworkCore;
 using AwesomeNetwork.Models;
 using AwesomeNetwork;
 using AwesomeNetwork.Data.UnitofWork;
+using AutoMapper;
 
 var builder = WebApplication.CreateBuilder(args);
 var connection = builder.Configuration.GetConnectionString("DefaultConnection");
+var mapperConfig = new MapperConfiguration((v) =>
+{
+    v.AddProfile(new MappingProfile());
+});
 
+IMapper mapper = mapperConfig.CreateMapper();
+
+builder.Services.AddSingleton(mapper);
 builder.Services
     .AddDbContext<ApplicationDbContext>(options => options.UseSqlite(connection))
     .AddIdentity<User, IdentityRole>(opts =>

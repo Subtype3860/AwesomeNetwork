@@ -1,0 +1,57 @@
+﻿@model AwesomeNetwork.ViewModels.Account.UserEditViewModel
+@{
+}
+
+<div>
+    <form method="post" asp-action="Update" asp-controller="AccountManager">
+        <div><h3>Редактирование пользователя</h3></div>
+        <div>
+            <label class="form-label" asp-for="UserId"></label>
+            <input class="form-control" asp-for="UserId">
+            <span asp-validation-for="UserId"></span>
+        </div>
+        <div>
+            <label class="form-label" asp-for="FirstName"></label>
+            <input class="form-control" asp-for="FirstName">
+            <span asp-validation-for="FirstName"></span>
+        </div>
+        <div>
+            <label class="form-label" asp-for="LastName"></label>
+            <input class="form-control" asp-for="LastName">
+            <span asp-validation-for="LastName"></span>
+        </div>
+        <div>
+            <label class="form-label" asp-for="MiddleName"></label>
+            <input class="form-control" asp-for="MiddleName">
+            <span asp-validation-for="MiddleName"></span>
+        </div>
+        <div>
+            <label class="form-label" asp-for="BirthDate"></label>
+            <input class="form-control" asp-for="BirthDate">
+            <span asp-validation-for="BirthDate"></span>
+        </div>
+        <div>
+            <label class="form-label" asp-for="Email"></label>
+            <input class="form-control" asp-for="Email">
+            <span asp-validation-for="Email"></span>
+        </div>
+        <div>
+            <label class="form-label" asp-for="Image"></label>
+            <input class="form-control" asp-for="Image">
+            <span asp-validation-for="Image"></span>
+        </div>
+        <div>
+            <label class="form-label" asp-for="Status"></label>
+            <input class="form-control" asp-for="Status">
+            <span asp-validation-for="Status"></span>
+        </div>
+        <div>
+            <label class="form-label" asp-for="About"></label>
+            <input class="form-control" asp-for="About">
+            <span asp-validation-for="About"></span>
+        </div>
+        <div>
+            <input class="btn btn-success" type="submit" value="Сохранить"/>
+        </div>
+    </form>
+</div>
