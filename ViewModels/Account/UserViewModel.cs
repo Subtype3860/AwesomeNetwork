@@ -7,7 +7,7 @@ namespace AwesomeNetwork.ViewModels.Account
         public User User { get; set; }
         public UserViewModel(User user)
         {
-            this.User = user;
+            User = user;
         }
     }
 }

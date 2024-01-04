@@ -42,3 +42,6 @@
 .background-white {
     background-color: white;
 }
+label > b{
+    opacity: 0.5;
+}

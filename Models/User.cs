@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Identity;
 
 namespace AwesomeNetwork.Models
 {
@@ -9,6 +10,7 @@ namespace AwesomeNetwork.Models
         public string? MiddleName { get; set; }
         public DateTime BirthDate { get; set; }
         public string Image { get; set; }
+        [Display(Name = "Статус")]
         public string Status { get; set; }
         public string About { get; set; }
         public string GetFullName()

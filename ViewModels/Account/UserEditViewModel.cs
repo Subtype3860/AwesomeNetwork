@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using AwesomeNetwork.Models;
 
 namespace AwesomeNetwork.ViewModels.Account
 {
@@ -10,7 +11,7 @@ namespace AwesomeNetwork.ViewModels.Account
 
         [DataType(DataType.Text)]
         [Display(Name = "Имя", Prompt = "Введите имя")]
-        public string FirstName { get; set; }
+        public string? FirstName { get; set; }
 
         [DataType(DataType.Text)]
         [Display(Name = "Фамилия", Prompt = "Введите фамилию")]

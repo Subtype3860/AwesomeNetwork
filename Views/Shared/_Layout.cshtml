@@ -16,17 +16,26 @@
 <body class="background-main">
     <header class="border-bottom header background-white">
         <div class="container">
-            <div class="topnav">
+            <div class="topnav row">
                 @if (!SignInManager.IsSignedIn(User))
                 {
-                    <a asp-area="" asp-controller="Home" asp-action="Index">SocialNetwork</a>
+                    <div class="col-4">
+                        <a asp-area="" asp-controller="Home" asp-action="Index"><img class="navbar-toggler-icon" alt="SocialNetwork" src="~/img/free-icon-font-home-3917074.svg"/></a>
+                    </div>
                 }
                 else
                 {
-                    <a asp-area="" asp-controller="AccountManager" asp-action="MyPage">SocialNetwork</a>
+                    <div class="col-4">
+                        <a asp-area="" asp-controller="AccountManager" asp-action="MyPage"><img class="navbar-toggler-icon" alt="" src="~/img/free-icon-font-user-3917711.svg" /></a>
+                    </div>
                 }
-                <partial name="_LoginPartial" />
-                <partial name="_SearchLayoutPartial" />
+                <div class="col-4">
+                    <partial name="_SearchLayoutPartial"/>
+                </div>
+                <div class="col-4 align-content-end">
+                    <partial name="_LoginPartial"/>
+                </div>
+
             </div>
         </div>
     </header>

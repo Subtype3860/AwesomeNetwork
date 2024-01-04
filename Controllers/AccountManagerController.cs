@@ -29,7 +29,7 @@ public class AccountManagerController : Controller
         return View("Login");
     }
     [HttpGet]
-    public IActionResult Login(string returnUrl = null)
+    public IActionResult Login(string? returnUrl)
     {
         return View(new LoginViewModel { ReturnUrl = returnUrl });
     }
@@ -84,10 +84,24 @@ public class AccountManagerController : Controller
         if (ModelState.IsValid)
         {
             var model = await _userManager.FindByIdAsync(user.Id);
-            return View(model);
+            if (model != null)
+            {
+                var editModel = new UserEditViewModel
+                {
+                    UserId = model.Id,
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
+                    MiddleName = model.MiddleName,
+                    BirthDate = model.BirthDate,
+                    Email = model.Email,
+                    Image = model.Image,
+                    Status = model.Status,
+                    About = model.About
+                };
+                return View("Edit", editModel);
+            }
         }
-        
-        return View("User", user);
+        return View("User", new UserViewModel(user));
         
     }
     [Authorize]
@@ -109,5 +123,16 @@ public class AccountManagerController : Controller
             ModelState.AddModelError("", "Некорректные данные");
             return View("Edit", model);
         }
+    }
+
+    [Route("UserList")]
+    [HttpPost]
+    public IActionResult UserList(string search)
+    {
+        var model = new SearchViewModel
+        {
+            UserList = _userManager.Users.Where(x => x.GetFullName().ToLower().Contains(search)).ToList()
+        };
+        return View("UserList", model);
     }
 }

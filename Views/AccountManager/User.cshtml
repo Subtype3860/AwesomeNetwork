@@ -4,31 +4,31 @@
     <h4 class="center">@Model.User.GetFullName()</h4>
     <div class="row">
         <div class="main">
-            <img class="main-img" src="@Model.User.Image" />
+            <img class="main-img" src="@Model.User.Image" alt=""/>
             <div class="center-align">
                 <form method="get" asp-controller="AccountManager" asp-action="Update">
                     <input type="hidden" asp-for="User.Id"/>
-                    <input class="enter_submit" type="submit" value="Редактировать"/>
+                    <input class="btn btn-primary" type="submit" value="Редактировать"/>
                 </form>
             </div>
         </div>
         <div class="side">
             <div class="lined-block">
                 <div>
-                    <label class="gray-text">Статус:</label>
-                    <label> @Model.User.Status</label>
+                    <label class="gray-text"><b>Статус: </b></label>
+                    <label class="form-label"> @Model.User.Status</label>
                 </div>
                 <div>
-                    <label class="gray-text">Дата рождения:</label>
-                    <label> @Model.User.BirthDate.ToLongDateString()</label>
+                    <label class="gray-text"><b>Дата рождения: </b></label>
+                    <label class="form-label"> @Model.User.BirthDate.ToLongDateString()</label>
                 </div>
                 <div>
-                    <label class="gray-text">О себе:</label>
-                    <label> @Model.User.About</label>
+                    <label class="gray-text"><b>О себе: </b></label>
+                    <label class="form-label"> @Model.User.About</label>
                 </div>
                 <div>
-                    <label class="gray-text">Email:</label>
-                    <label> @Model.User.Email</label>
+                    <label class="gray-text"><b>Email:</b></label>
+                    <label class="form-label"> @Model.User.Email</label>
                 </div>
             </div>
         </div>
