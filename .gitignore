@@ -5,3 +5,12 @@ obj/project.packagespec.json
 /Data/Migrations/
 .idea/.idea.AwesomeNetwork.dir/
 obj/Debug/net7.0/project.razor.vscode.bin
+/bin/Debug/net8.0
+/obj/AwesomeNetwork.csproj.nuget.dgspec.json
+/obj/AwesomeNetwork.csproj.nuget.g.props
+/obj/AwesomeNetwork.csproj.nuget.g.targets
+/obj/project.assets.json
+/obj/project.nuget.cache
+/app.db-shm
+/app.db-wal
+bin/
