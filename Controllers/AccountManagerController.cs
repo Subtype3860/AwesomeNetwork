@@ -131,7 +131,7 @@ public class AccountManagerController : Controller
     {
         var model = new SearchViewModel
         {
-            UserList = _userManager.Users.Where(x => x.GetFullName().ToLower().Contains(search)).ToList()
+            UserList = _userManager.Users.ToList().Where(x => x.GetFullName().ToLower().Contains(search.ToLower())).ToList()
         };
         return View("UserList", model);
     }
