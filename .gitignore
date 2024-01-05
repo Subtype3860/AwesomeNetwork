@@ -13,3 +13,4 @@ obj/Debug/net7.0/project.razor.vscode.bin
 /obj/project.nuget.cache
 /app.db-shm
 /app.db-wal
+bin/
