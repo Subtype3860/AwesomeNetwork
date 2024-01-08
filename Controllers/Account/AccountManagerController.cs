@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AutoMapper;
-using AwesomeNetwork.Data.Repository;
-using AwesomeNetwork.Data.UoW;
+﻿using AutoMapper;
 using AwesomeNetwork.Models.Users;
 using AwesomeNetwork.ViewModels.Account;
 using Microsoft.AspNetCore.Identity;
@@ -31,11 +25,11 @@ namespace AwesomeNetwork.Controllers.Account
         [HttpGet]
         public IActionResult Login()
         {
-            return View("Home/Login");
+            return View("Login");
         }
 
         [HttpGet]
-        public IActionResult Login(string returnUrl = null)
+        public IActionResult Login(string returnUrl)
         {
             return View(new LoginViewModel { ReturnUrl = returnUrl });
         }
@@ -50,7 +44,7 @@ namespace AwesomeNetwork.Controllers.Account
                
                 var user = _mapper.Map<User>(model);
 
-                var result = await _signInManager.PasswordSignInAsync(user.Email, model.Password, model.RememberMe, false);
+                var result = await _signInManager.PasswordSignInAsync(user.Email!, model.Password!, model.RememberMe, false);
 
                 if (result.Succeeded)
                 {

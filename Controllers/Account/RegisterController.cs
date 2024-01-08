@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AutoMapper;
-using AwesomeNetwork.Data.Repository;
-using AwesomeNetwork.Data.UoW;
+﻿using AutoMapper;
 using AwesomeNetwork.Models.Users;
 using AwesomeNetwork.ViewModels.Account;
 using Microsoft.AspNetCore.Identity;
@@ -31,7 +25,7 @@ namespace AwesomeNetwork.Controllers.Account
         [HttpGet]
         public IActionResult Register()
         {
-            return View("Home/Register");
+            return View("Register");
         }
 
         [Route("RegisterPart2")]
@@ -51,7 +45,7 @@ namespace AwesomeNetwork.Controllers.Account
             {
                 var user = _mapper.Map<User>(model);
                
-                var result = await _userManager.CreateAsync(user, model.PasswordReg);
+                var result = await _userManager.CreateAsync(user, model.PasswordReg!);
                 if (result.Succeeded)
                 {
                     await _signInManager.SignInAsync(user, false);
