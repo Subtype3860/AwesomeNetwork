@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using AwesomeNetwork.Models;
-using AwesomeNetwork.Data.UnitofWork;
-using AutoMapper;
 using AwesomeNetwork.ViewModels.Account;
 
 namespace AwesomeNetwork.Controllers

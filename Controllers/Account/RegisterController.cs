@@ -45,7 +45,7 @@ namespace AwesomeNetwork.Controllers.Account
             {
                 var user = _mapper.Map<User>(model);
                
-                var result = await _userManager.CreateAsync(user, model.PasswordReg!);
+                var result = await _userManager.CreateAsync(user, model.PasswordReg);
                 if (result.Succeeded)
                 {
                     await _signInManager.SignInAsync(user, false);

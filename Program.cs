@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using AutoMapper;
 using AwesomeNetwork.Data;
+using AwesomeNetwork.Data.Repository;
 using AwesomeNetwork.Ext;
 using AwesomeNetwork.Models.Users;
 
@@ -26,6 +27,8 @@ namespace AwesomeNetwork
             builder.Services
                 .AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connection))
                 .AddUnitOfWork()
+                .AddCustomRepository<Message, MessageRepository>()
+                .AddCustomRepository<Friend, FriendsRepository>()
                 .AddIdentity<User, IdentityRole>(opts =>
                    {
                        opts.Password.RequiredLength = 5;
