@@ -12,18 +12,18 @@
             </form>
         </div>
 
-        <h4 class="center">Чат @Model.You.FirstName и  @Model.ToWhom.FirstName</h4>
+        <h4 class="center">Чат @Model.You!.FirstName и  @Model.ToWhom!.FirstName</h4>
 
         <div class="lined-block">
             <label class="gray-text">Сообщения</label>
 
-            @if (Model.History.Count != 0)
+            @if (Model.History!.Count != 0)
             {
 
                 @foreach (var message in @Model.History)
                 {
                     <div>
-                        <label> @message.Sender.FirstName:</label>
+                        <label> @message.Sender!.FirstName:</label>
                         @message.Text
                     </div>
                 }

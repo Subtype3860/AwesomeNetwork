@@ -78,14 +78,14 @@ namespace AwesomeNetwork.Controllers.Account
             return View("User", model);
         }
 
-        private async Task<List<User>> GetAllFriend(User user)
+        private async Task<List<User>?> GetAllFriend(User user)
         {
             var repository = _unitOfWork.GetRepository<Friend>() as FriendsRepository;
 
             return repository.GetFriendsByUser(user);
         }
 
-        private async Task<List<User>> GetAllFriend()
+        private async Task<List<User>?> GetAllFriend()
         {
             var user = User;
 

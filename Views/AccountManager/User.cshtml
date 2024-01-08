@@ -44,7 +44,7 @@
                 <label class="gray-text">Список друзей</label>
 
                 <div class="friendbox">
-                    @if (Model.Friends.Count != 0)
+                    @if (Model.Friends!.Count != 0)
                     {
 
                         @foreach (var user in @Model.Friends)
