@@ -38,14 +38,14 @@ namespace AwesomeNetwork.Controllers.Account
         public async Task<IActionResult> Generate()
         {
 
-            var usergen = new GenetateUsers();
+            var usergen = new GenerateUsers();
             var userlist = usergen.Populate(35);
 
             foreach(var user in userlist)
             {
                 var result = await _userManager.CreateAsync(user, "123456");
 
-                if (!result.Succeeded) continue;
+                if (!result.Succeeded);
             }
 
             return RedirectToAction("Index", "Home");
@@ -59,7 +59,7 @@ namespace AwesomeNetwork.Controllers.Account
         }
 
         [HttpGet]
-        public IActionResult Login(string returnUrl = null)
+        public IActionResult Login(string returnUrl)
         {
             return View(new LoginViewModel { ReturnUrl = returnUrl });
         }
@@ -231,7 +231,7 @@ namespace AwesomeNetwork.Controllers.Account
             list.ForEach(x =>
             {
                 var t = _mapper.Map<UserWithFriendExt>(x);
-                t.IsFriendWithCurrent = withfriend.Where(y => y.Id == x.Id || x.Id == result.Id).Count() != 0;
+                t.IsFriendWithCurrent = withfriend.Where(y => y.Id == x.Id || x.Id == result!.Id).Count() != 0;
                 data.Add(t);
             });
 
@@ -262,7 +262,7 @@ namespace AwesomeNetwork.Controllers.Account
 
             var repository = _unitOfWork.GetRepository<Message>() as MessageRepository;
 
-            var mess = repository.GetMessages(result, friend);
+            var mess = repository!.GetMessages(result, friend);
 
             var model = new ChatViewModel()
             {
@@ -302,7 +302,7 @@ namespace AwesomeNetwork.Controllers.Account
                 Recipient = friend,
                 Text = chat.NewMessage.Text,
             };
-            repository.Create(item);
+            repository!.Create(item);
 
             var model = await GenerateChat(id);
             return View("Chat", model);

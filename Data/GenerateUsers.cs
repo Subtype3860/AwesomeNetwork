@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace AwesomeNetwork.Data
 {
-    public class GenetateUsers
+    public class GenerateUsers
     {
         private readonly string[] _maleNames =  { "Александро", "Борис", "Василий", "Игорь", "Даниил", "Сергей", "Евгений", "Алексей", "Геогрий", "Валентин" };
         private readonly string[] _femaleNames =  { "Анна", "Мария", "Станислава", "Елена" };
