@@ -6,9 +6,9 @@ namespace AwesomeNetwork.Data
 {
     public class GenetateUsers
     {
-        public readonly string[] maleNames = new string[] { "Александро", "Борис", "Василий", "Игорь", "Даниил", "Сергей", "Евгений", "Алексей", "Геогрий", "Валентин" };
-        public readonly string[] femaleNames = new string[] { "Анна", "Мария", "Станислава", "Елена" };
-        public readonly string[] lastNames = new string[] { "Тестов", "Титов", "Потапов", "Джабаев", "Иванов" };
+        private readonly string[] _maleNames = new string[] { "Александро", "Борис", "Василий", "Игорь", "Даниил", "Сергей", "Евгений", "Алексей", "Геогрий", "Валентин" };
+        private readonly string[] _femaleNames = new string[] { "Анна", "Мария", "Станислава", "Елена" };
+        private readonly string[] _lastNames = new string[] { "Тестов", "Титов", "Потапов", "Джабаев", "Иванов" };
 
         public List<User> Populate(int count)
         {
@@ -20,15 +20,15 @@ namespace AwesomeNetwork.Data
 
                 var male = rand.Next(1, 2) == 1;
 
-                var lastName = lastNames[rand.Next(0, lastNames.Length - 1)];
+                var lastName = _lastNames[rand.Next(0, _lastNames.Length - 1)];
                 if (male)
                 {
-                    firstName = maleNames[rand.Next(0, maleNames.Length - 1)];
+                    firstName = _maleNames[rand.Next(0, _maleNames.Length - 1)];
                 }
                 else
                 {
                     lastName = lastName + "a";
-                    firstName = femaleNames[rand.Next(0, femaleNames.Length - 1)];
+                    firstName = _femaleNames[rand.Next(0, _femaleNames.Length - 1)];
                 }
 
                 var item = new User()
