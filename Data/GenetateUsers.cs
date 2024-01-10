@@ -6,9 +6,9 @@ namespace AwesomeNetwork.Data
 {
     public class GenetateUsers
     {
-        private readonly string[] _maleNames = new string[] { "Александро", "Борис", "Василий", "Игорь", "Даниил", "Сергей", "Евгений", "Алексей", "Геогрий", "Валентин" };
-        private readonly string[] _femaleNames = new string[] { "Анна", "Мария", "Станислава", "Елена" };
-        private readonly string[] _lastNames = new string[] { "Тестов", "Титов", "Потапов", "Джабаев", "Иванов" };
+        private readonly string[] _maleNames =  { "Александро", "Борис", "Василий", "Игорь", "Даниил", "Сергей", "Евгений", "Алексей", "Геогрий", "Валентин" };
+        private readonly string[] _femaleNames =  { "Анна", "Мария", "Станислава", "Елена" };
+        private readonly string[] _lastNames =  { "Тестов", "Титов", "Потапов", "Джабаев", "Иванов" };
 
         public List<User> Populate(int count)
         {
