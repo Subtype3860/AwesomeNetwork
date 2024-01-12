@@ -1,5 +1,5 @@
-﻿using AwesomeNetwork.Data.Repository;
-using AwesomeNetwork.Data.UnitOfWork;
+﻿using AwesomeNetwork.Data.UnitOfWork;
+using DbContext.Data.Repository;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace AwesomeNetwork.Ext

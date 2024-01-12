@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace AwesomeNetwork.Data.Repository
+﻿namespace DbContext.Data.Repository
 {
     public interface IRepository<T> where T : class
     {

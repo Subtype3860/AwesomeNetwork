@@ -1,4 +1,4 @@
-﻿namespace AwesomeNetwork.Models.Users
+﻿namespace DbContext.Models.Users
 {
     public class Friend
     {

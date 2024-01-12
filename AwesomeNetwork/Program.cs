@@ -1,10 +1,10 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using AutoMapper;
-using AwesomeNetwork.Data;
-using AwesomeNetwork.Data.Repository;
 using AwesomeNetwork.Ext;
-using AwesomeNetwork.Models.Users;
+using DbContext.Data;
+using DbContext.Data.Repository;
+using DbContext.Models.Users;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

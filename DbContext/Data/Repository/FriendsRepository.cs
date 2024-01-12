@@ -1,9 +1,7 @@
-﻿using AwesomeNetwork.Models.Users;
+﻿using DbContext.Models.Users;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Linq;
 
-namespace AwesomeNetwork.Data.Repository
+namespace DbContext.Data.Repository
 {
     public class FriendsRepository : Repository<Friend>
     {

@@ -1,11 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
 
-namespace AwesomeNetwork.Data.Repository
+namespace DbContext.Data.Repository
 {
     public class Repository<T> : IRepository<T> where T : class
     {
-        protected DbContext _db;
+        private Microsoft.EntityFrameworkCore.DbContext _db;
 
         public DbSet<T> Set { get; private set; }
 
@@ -32,7 +31,7 @@ namespace AwesomeNetwork.Data.Repository
 
         public T Get(int id)
         {
-            return Set.Find(id);
+            return Set.Find(id)!;
         }
 
         public IEnumerable<T> GetAll()

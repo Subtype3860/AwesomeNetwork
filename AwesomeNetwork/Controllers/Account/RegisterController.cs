@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using AutoMapper;
-using AwesomeNetwork.Models.Users;
 using AwesomeNetwork.ViewModels.Account;
+using DbContext.Models.Users;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 

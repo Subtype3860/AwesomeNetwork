@@ -1,7 +1,8 @@
-﻿using AwesomeNetwork.Data.Repository;
-using Microsoft.EntityFrameworkCore.Infrastructure;
+﻿using Microsoft.EntityFrameworkCore.Infrastructure;
 using System;
 using System.Collections.Generic;
+using DbContext.Data;
+using DbContext.Data.Repository;
 
 namespace AwesomeNetwork.Data.UnitOfWork
 {

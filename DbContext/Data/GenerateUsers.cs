@@ -1,8 +1,6 @@
-﻿using AwesomeNetwork.Models.Users;
-using System;
-using System.Collections.Generic;
+﻿using DbContext.Models.Users;
 
-namespace AwesomeNetwork.Data
+namespace DbContext.Data
 {
     public class GenerateUsers
     {

@@ -1,9 +1,9 @@
-﻿using AwesomeNetwork.Configs;
-using AwesomeNetwork.Models.Users;
+﻿using DbContext.Configs;
+using DbContext.Models.Users;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace AwesomeNetwork.Data
+namespace DbContext.Data
 {
     public class ApplicationDbContext : IdentityDbContext<User>
     {

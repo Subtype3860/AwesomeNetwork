@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
-using AwesomeNetwork.Models.Users;
 using AwesomeNetwork.ViewModels.Account;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DbContext.Models.Users;
 
 namespace AwesomeNetwork
 {

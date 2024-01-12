@@ -1,5 +1,5 @@
-﻿using AwesomeNetwork.Models.Users;
-using AwesomeNetwork.ViewModels.Account;
+﻿using AwesomeNetwork.ViewModels.Account;
+using DbContext.Models.Users;
 
 namespace AwesomeNetwork.Ext
 {

@@ -1,9 +1,8 @@
-﻿using AwesomeNetwork.Models.Users;
+﻿using AwesomeNetwork.Data;
+using DbContext.Models.Users;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Linq;
 
-namespace AwesomeNetwork.Data.Repository
+namespace DbContext.Data.Repository
 {
     public class MessageRepository : Repository<Message>
     {
