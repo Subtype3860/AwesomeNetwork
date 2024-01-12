@@ -14,3 +14,4 @@ obj/Debug/net7.0/project.razor.vscode.bin
 /app.db-shm
 /app.db-wal
 bin/
+obj/
