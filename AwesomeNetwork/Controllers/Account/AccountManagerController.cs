@@ -46,7 +46,7 @@ namespace AwesomeNetwork.Controllers.Account
             {
                 var result = await _userManager.CreateAsync(user, "123456");
 
-                if (!result.Succeeded);
+                if (!result.Succeeded)continue;
             }
 
             return RedirectToAction("Index", "Home");

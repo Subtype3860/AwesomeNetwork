@@ -25,17 +25,18 @@ namespace AwesomeNetwork.ViewModels.Account
         [Display(Name = "Email", Prompt = "example.com")]
         public string EmailReg { get; set; }
 
-        [Required(ErrorMessage = "Поле Год обязательно для заполнения")]
-        [Display(Name = "Год", Prompt = "Год")]
-        public int? Year { get; set; }
+        //[Required(ErrorMessage = "Поле Год обязательно для заполнения")]
+        //[Display(Name = "Год", Prompt = "Год")]
+        //public int? Year { get; set; }
 
         [Required(ErrorMessage = "Поле День обязательно для заполнения")]
-        [Display(Name = "День", Prompt = "День")]
-        public int? Date { get; set; }
+        [Display(Name = "День рождения", Prompt = "День рождения")]
+        [DataType(DataType.Date)]
+        public DateTime? Date { get; set; }
 
-        [Required(ErrorMessage = "Поле Месяц обязательно для заполнения")]
-        [Display(Name = "Месяц", Prompt = "Месяц")]
-        public int? Month { get; set; }
+        //[Required(ErrorMessage = "Поле Месяц обязательно для заполнения")]
+        //[Display(Name = "Месяц", Prompt = "Месяц")]
+        //public int? Month { get; set; }
 
         [Required(ErrorMessage = "Поле Пароль обязательно для заполнения")]
         [DataType(DataType.Password)]
