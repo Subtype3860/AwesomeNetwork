@@ -13,22 +13,25 @@
         <div asp-validation-summary="ModelOnly"></div>
         <div>
             <div class="mrgn">
-                <input asp-for="FirstName" class="form-control" />
+                <label asp-for="FirstName" class="form-check-label"></label>
+                <input asp-for="FirstName" class="form-control"/>
                 <span asp-validation-for="FirstName" class="text-danger"></span>
             </div>
         </div>
         <div>
             <div class="mrgn">
-                <input asp-for="LastName" class="form-control" />
+                <label asp-for="LastName" class="form-check-label"></label>
+                <input asp-for="LastName" class="form-control"/>
                 <span asp-validation-for="LastName" class="text-danger"></span>
             </div>
         </div>
 
-        <div class="mrgn center">
-            <input type="date" asp-for="Date" class="form-control date_control" />
+        <div class="mrgn">
+            <label asp-for="Date" class="form-check-label"></label>
+            <input type="date" asp-for="Date" class="form-control date_control"/>
             <span asp-validation-for="Date" class="text-danger"></span>
 
-@*             <input asp-for="Month" class="form-control date_control" />
+            @*             <input asp-for="Month" class="form-control date_control" />
             <span asp-validation-for="Month" class="text-danger"></span>
 
             <input asp-for="Year" class="form-control date_control" />
